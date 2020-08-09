@@ -3,21 +3,26 @@
         <b-col class="text-right">
             <b-card class="text-right">
                 <b-card-text>
-                {{msg}}
-                {{name}}
+                <p>{{msg}}</p>
+                <p>{{name}}</p>
+                <p>{{self['.key']}}</p>
                 </b-card-text>
             </b-card>
-            <a>Delete</a>
+            <b-button v-on:click="$emit('delete-button', self['.key'])">Delete</b-button>
         </b-col>
     </b-row>
 </template>
 
 <script>
+
+
+
 export default {
     name: 'ChatBubble',
     props: {
         name: String,
-        msg: String
+        msg: String,
+        self: Object
     }
 }
 </script>

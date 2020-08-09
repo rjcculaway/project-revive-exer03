@@ -1,5 +1,5 @@
 <template>
-  <b-row class="home">
+  <b-row class="login">
   </b-row> 
 </template>
 
