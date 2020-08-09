@@ -4,6 +4,7 @@
             <b-card class="text-right">
                 <b-card-text>
                 {{msg}}
+                {{name}}
                 </b-card-text>
             </b-card>
             <a>Delete</a>
