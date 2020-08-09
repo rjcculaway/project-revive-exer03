@@ -1,8 +1,5 @@
 // Get a RTDB instance
-import firebase from 'firebase/app'
+import { fb } from './init.js'
 import 'firebase/database'
-import config from './credentials'
 
-export const db = firebase
-  .initializeApp({ databaseURL: config.config.databaseURL })
-  .database()
+export const db = fb.database()
