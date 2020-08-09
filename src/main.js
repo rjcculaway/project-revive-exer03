@@ -17,7 +17,7 @@ new Vue({
       if(user) {
         this.$router.push('/home')
       } else {
-        this.$router.push('/')
+        this.$router.push('/login')
       }
      });
   },

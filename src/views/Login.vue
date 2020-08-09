@@ -1,7 +1,10 @@
 <template>
   <b-row class="login">
-    <section id="firebaseui-auth-container">
-    </section>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <b-col>
+      <div id="firebaseui-auth-container">
+      </div>
+    </b-col>
   </b-row> 
 </template>
 
@@ -17,12 +20,15 @@ export default {
   },
   mounted() {
     var uiConfig = {
-      signInSuccessUrl: '/home',
+      signInFlow: 'popup',
       signInOptions:
         [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
       };
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    ui.start('#firebaseui-auth-container', uiConfig);
+      let ui = firebaseui.auth.AuthUI.getInstance();
+      if (!ui) {
+        ui = new firebaseui.auth.AuthUI(firebase.auth());
+      }
+      ui.start('#firebaseui-auth-container', uiConfig);
     },
 }
 </script>

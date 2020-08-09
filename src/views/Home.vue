@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      user: null
+      user: {}
     };
   },
   created() {
@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     logOut: function () {
-      firebase.auth().signOut();
+      firebase.auth().signOut().then(() => this.$router.replace({
+        name: "Login"
+      }));
     }
   }
 }
