@@ -2,7 +2,7 @@
     <b-row>
         <b-col>
             <ChatBubble v-on:delete-button="deleteMessage" v-for="message in messages" :key="message.key" :msg="message.msg" :name="message.name" :self="message"/>
-            <ChatArea />
+            <ChatArea :name="name" />
         </b-col>
     </b-row>
 </template>
@@ -14,6 +14,9 @@ import { db } from '../firebase/db'
 
 export default {
     name: 'ChatContainer',
+    props: {
+        name: String
+    },
     components: {
         ChatArea,
         ChatBubble
