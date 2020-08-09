@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    Integrated Articulatingly Questionable Text Airing Underlayer (IAQ TAU)
-    <ChatArea />
-  </div>
+  <b-row class="home">
+        <b-col>
+          <TopBar />
+          <ChatContainer />
+        </b-col>
+    </b-row> 
 </template>
 
 <script>
 // @ is an alias to /src
-import ChatArea from '@/components/ChatArea.vue'
+import ChatContainer from '@/components/ChatContainer.vue'
+import TopBar from '@/components/TopBar.vue'
 
 export default {
   name: 'Home',
   components: {
-    ChatArea
+    ChatContainer,
+    TopBar
   }
 }
 </script>
