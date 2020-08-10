@@ -1,14 +1,11 @@
 <template>
-    <b-row>
-        <b-col class="text-right">
-            <b-card class="text-right">
-                <b-card-text>
+    <b-row align-h="end">
+        <b-col class="text-right" cols="auto">
+            <div class="bubble p-3 m-2">
                 <p>{{msg}}</p>
-                <p>{{name}}</p>
-                <p>{{self['.key']}}</p>
-                </b-card-text>
-            </b-card>
-            <b-button v-on:click="$emit('delete-button', self['.key'])">Delete</b-button>
+                <p class="name">{{name}}</p>
+            </div>
+            <b-link style="line-height: 0" v-on:click="$emit('delete-button', self['.key'])">Delete</b-link>
         </b-col>
     </b-row>
 </template>
@@ -27,5 +24,6 @@ export default {
 }
 </script>
 
-<style scoped lang='scss'>
+<style lang='scss'>
+
 </style>

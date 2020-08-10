@@ -1,7 +1,7 @@
 <template>
     <b-row>
         <b-col>
-            <h1 class="text-center">IAQ</h1>
+            <h1 class="text-center" style="line-height: 65%">IAQ</h1>
             <h1 class="text-center">TAU</h1>
             <h6 class="text-center mb-4">Integrated Articulator for the Questionable Text Airing Underworld</h6>
         </b-col>
@@ -19,17 +19,16 @@ export default {
     $e-Matrix-3-rgba: rgba(191,223,33, 0.5);
 
     h1 {
-        font-family: 'Press Start 2P', cursive;
-        font-size: 5em;
+        font-family: 'Audiowide', cursive;
+        font-size: 7em;
         font-weight: 800;
-        margin: 0;
 
         text-shadow: 0 0 25px $e-Matrix-3-rgba;
 
         animation: 1.5s infinite glowing;
     }
     h6 {
-        font-family: 'Press Start 2P', cursive;
+        font-family: 'Audiowide', cursive;
         font-size: 0.75em;
     }
 

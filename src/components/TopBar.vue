@@ -1,17 +1,21 @@
 <template>
     <b-row>
         <b-col>
-            Integrated Articulator for the Questionable Text Airing Underworld
-        </b-col>
-        <b-col cols="2">
-            <b-button v-on:click="$emit('log-out')" type="submit">Log Out</b-button>
+            <div class="mt-5">
+                <Logo />
+            </div>
         </b-col>
     </b-row>
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
+
 export default {
-    name: 'TopBar'
+    name: 'TopBar',
+    components: {
+        Logo
+    }
 }
 </script>
 

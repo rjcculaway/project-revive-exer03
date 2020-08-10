@@ -39,11 +39,12 @@ $card-bg: transparent;
 
 // Inputs
 $input-bg:                              transparent;
+$input-color: white;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 @import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css');
 
 body {
@@ -52,6 +53,14 @@ body {
     text-shadow: 0 0 5px rgba(191,223,33, 0.75);
 }
 
-b-form-valid-feedback {
-    text-shadow: none;
+.bubble {
+    background-color: $e-Matrix-3-rgba;
+    border-radius: 3px;
+    color: black;
+    box-shadow: 0 0 5px rgba(191,223,33, 0.75);
+}
+
+.name {
+    font-family: 'Audiowide', cursive;
+    line-height: 0;
 }

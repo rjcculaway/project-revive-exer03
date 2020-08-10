@@ -1,9 +1,13 @@
 <template>
-    <b-row>
+    <b-row align-v="center">
         <b-col>
-            <b-form inline>
-                <b-form-textarea id="msg_input" class="textarea-auto-height" rows="2" max-rows="5" no-resize> </b-form-textarea>
-                <b-button v-on:click="send_message()" type="submit">Send</b-button>  
+            <b-form-textarea id="msg_input" class="textarea-auto-height" rows="2" max-rows="5" no-resize> </b-form-textarea>
+        </b-col>
+        <b-col cols="auto">
+            <b-form>
+                <b-button size="sm" v-on:click="send_message()" type="submit">Send</b-button>  
+                <br />
+                <b-button size="sm" class="mt-2" v-on:click="$emit('log-out')" type="submit">Log Out</b-button>
             </b-form>
         </b-col>
     </b-row>
