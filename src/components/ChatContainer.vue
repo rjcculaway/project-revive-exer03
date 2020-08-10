@@ -1,8 +1,10 @@
 <template>
     <b-row>
         <b-col>
-            <ChatBubble v-on:delete-button="deleteMessage" v-for="message in messages" :key="message.key" :msg="message.msg" :name="message.name" :self="message"/>
-            <ChatArea :name="name" />
+            <b-card class="chat-display text-right">
+                <ChatBubble v-on:delete-button="deleteMessage" v-for="message in messages" :key="message.key" :msg="message.msg" :name="message.name" :self="message"/>
+            </b-card>
+            <ChatArea class="my-3" :name="name" />
         </b-col>
     </b-row>
 </template>
@@ -39,4 +41,8 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+    .chat-display {
+        overflow-y: auto;
+        height: 75vh;
+    }
 </style>

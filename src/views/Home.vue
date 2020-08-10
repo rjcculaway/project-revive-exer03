@@ -1,10 +1,10 @@
 <template>
-  <b-row class="home">
-        <b-col>
-          <TopBar v-on:log-out="logOut" />
-          <ChatContainer :name="displayName" />
-        </b-col>
-    </b-row> 
+  <b-row class="home" align-h="center">
+      <b-col>
+        <TopBar v-on:log-out="logOut" />
+        <ChatContainer :name="displayName" />
+      </b-col>
+  </b-row> 
 </template>
 
 <script>
@@ -25,6 +25,18 @@ export default {
       displayName: ''
     };
   },
+  methods: {
+    // Logging out kicks the user from the chat app.
+    logOut: function () {
+        firebase.auth().signOut().then(() => {
+            if (this.$router.path !== `/login`) {
+            this.$router.replace({
+                name: "Login"
+            })
+            }
+        });
+    }
+  },
   created() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -43,18 +55,6 @@ export default {
         }
       }
     })
-  },
-  methods: {
-    // Logging out kicks the user from the chat app.
-    logOut: function () {
-      firebase.auth().signOut().then(() => {
-        if (this.$router.path !== `/login`) {
-          this.$router.replace({
-            name: "Login"
-          })
-        }
-      });
-    }
   }
 }
 </script>

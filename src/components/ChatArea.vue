@@ -1,9 +1,12 @@
 <template>
-    <b-row>
+    <b-row align-v="center">
+        <!-- This is where the user inputs the message. -->
         <b-col>
-            <b-form inline>
-                <b-form-textarea id="msg_input" class="textarea-auto-height" rows="2" max-rows="5" no-resize> </b-form-textarea>
-                <b-button v-on:click="send_message()" type="submit">Send</b-button>  
+            <b-form-textarea id="msg_input" class="textarea-auto-height" rows="2" no-resize> </b-form-textarea>
+        </b-col>
+        <b-col cols="auto">
+            <b-form>
+                <b-button size="sm" v-on:click="send_message()" type="submit">Send</b-button>  
             </b-form>
         </b-col>
     </b-row>
@@ -18,16 +21,19 @@ export default {
         name: String
     },
     methods: {
+        // Fetches the message from textarea, then pushes it onto the database.
         send_message: function () {
+            var message_input = document.getElementById("msg_input").value
             console.log('NAME: ' + this.name)
             var message = {
-                msg: document.getElementById("msg_input").value,
+                msg: message_input,
                 name: this.name
             } 
             db.ref('messages/').push(message)
                 .catch(error => {
                     console.log(error)
                 })
+            document.getElementById("msg_input").value = ''
         }
         
     }
