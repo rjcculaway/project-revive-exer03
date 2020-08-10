@@ -19,7 +19,7 @@ Vue.use(VueRouter)
   {
     path: '*',
     name: 'catchAll',
-    component: Home
+    component: Login
   }
 ]
 

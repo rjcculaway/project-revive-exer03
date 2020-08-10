@@ -2,7 +2,7 @@
   <b-row class="home">
         <b-col>
           <TopBar v-on:log-out="logOut" />
-          <ChatContainer :name="this.user.displayName" />
+          <ChatContainer :name="displayName" />
         </b-col>
     </b-row> 
 </template>
@@ -21,21 +21,39 @@ export default {
   },
   data() {
     return {
-      user: {}
+      user: {},
+      displayName: ''
     };
   },
   created() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.user = user;
+        // If the user is anonymous then we cannot use the displayName attribute to fetch the name, hence we store fetch it in temporaryName.
+        if (user.isAnonymous) {
+          this.displayName = user.temporaryName
+        } else {
+          this.displayName = user.displayName
+        }
+      } else {
+        if (this.$router.path !== `/login`) {
+          this.$router.replace({
+            name: "Login"
+          })
+        }
       }
-    });
+    })
   },
   methods: {
+    // Logging out kicks the user from the chat app.
     logOut: function () {
-      firebase.auth().signOut().then(() => this.$router.replace({
-        name: "Login"
-      }));
+      firebase.auth().signOut().then(() => {
+        if (this.$router.path !== `/login`) {
+          this.$router.replace({
+            name: "Login"
+          })
+        }
+      });
     }
   }
 }
