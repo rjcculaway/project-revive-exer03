@@ -1,7 +1,7 @@
 <template>
     <b-row>
         <b-col>
-            Integrated Articulatingly Questionable Text Airing Underlayer (IAQ TAU)
+            Integrated Articulator for the Questionable Text Airing Underworld
         </b-col>
         <b-col cols="2">
             <b-button v-on:click="$emit('log-out')" type="submit">Log Out</b-button>

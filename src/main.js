@@ -5,6 +5,7 @@ import './plugins/bootstrap-vue'
 import './plugins/vuefire'
 import App from './App.vue'
 import router from './router'
+import './style/custom.scss'
 
 import firebase from 'firebase'
 

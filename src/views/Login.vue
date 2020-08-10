@@ -1,38 +1,42 @@
 <template>
-  <b-row class="login">
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <b-col>
-      <div id="firebaseui-auth-container">
-      </div>
-      <h5 class="text-center">
-        or sign-in anonymously:
-      </h5>
-      <div id="anonymous-sign-in">
+  <b-row class="login vh-100" align-content="center" align-h="center">
+    <b-col lg="4" cols="auto">
+      <Logo />
+      <b-card text-center>
+        <h3>Sign In</h3>
+        <!-- Sign In with Google -->
+        <div id="firebaseui-auth-container">
+        </div>
 
-        <b-form @submit="onSubmit">
-          <b-form-group id="name_group" label="Display Name" label-for="display_name">
-            <b-form-input id="display_name" v-model="name_anonymous" :state="validation" required placeholder="Enter name"></b-form-input>
-            <!-- Validation States -->
-            <b-form-invalid-feedback :state="validation">
-              Your display name is invalid.
-            </b-form-invalid-feedback>
-            <b-form-valid-feedback :state="validation">
-              Looking good!
-            </b-form-valid-feedback>
-            <b-form-text id="name-guide">Your display name can only contain alphanumeric characters, hyphens, underscores, and must be 4 to 20 characters.</b-form-text>
-          </b-form-group>
+        <!-- Anonymous Sign-In with Display Name -->
+        <h6 class="text-center">
+          or sign-in anonymously:
+        </h6>
+        <div id="anonymous-sign-in">
+          <b-form @submit="onSubmit">
+            <b-form-group id="name_group" label="Display Name" label-for="display_name">
+              <b-form-input id="display_name" v-model="name_anonymous" :state="validation" required placeholder="Enter name"></b-form-input>
+              <!-- Validation States -->
+              <b-form-invalid-feedback :state="validation">
+                Your display name is invalid.
+              </b-form-invalid-feedback>
+              <b-form-valid-feedback :state="validation">
+                Looking good!
+              </b-form-valid-feedback>
+              <b-form-text id="name-guide">Your display name can only contain alphanumeric characters, hyphens, underscores, and must be 4 to 20 characters.</b-form-text>
+            </b-form-group>
 
-          <b-button type="submit" v-if="validation">Submit</b-button>
-        </b-form>
-        
-      </div>
-      
-    
+            <b-button type="submit" v-if="validation">Submit</b-button>
+          </b-form>
+          
+        </div>
+      </b-card>
     </b-col>
   </b-row> 
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
 
 var firebase = require('firebase');
 var firebaseui = require('firebaseui');
@@ -40,6 +44,7 @@ var firebaseui = require('firebaseui');
 export default {
   name: 'Login',
   components: {
+    Logo
   },
   data() {
     return {
