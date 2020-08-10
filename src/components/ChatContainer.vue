@@ -1,7 +1,7 @@
 <template>
     <b-row>
         <b-col>
-            <b-card class="chat-display text-right green-scroll">
+            <b-card class="chat-display text-right">
                 <ChatBubble v-on:delete-button="deleteMessage" v-for="message in messages" :key="message.key" :msg="message.msg" :name="message.name" :self="message"/>
             </b-card>
             <ChatArea class="my-3" :name="name" />

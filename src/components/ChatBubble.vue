@@ -1,5 +1,7 @@
 <template>
     <b-row align-h="end" align-v="center">
+        <!-- This represents a chat bubble. -->
+        <!-- When hovered, a delete button is displayed. -->
         <b-col class="text-right" cols="auto" @mouseover="hovering=true" @mouseleave="hovering=false">
             <div class="bubble p-3 m-2">
                 <p>{{msg}}</p>

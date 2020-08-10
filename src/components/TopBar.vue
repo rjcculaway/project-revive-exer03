@@ -1,5 +1,6 @@
 <template>
     <b-row>
+        <!-- This one simply contains the logo and the log out button. -->
         <b-col>
             <b-navbar>
                 <b-navbar-brand class="logonav">IAQ TAU</b-navbar-brand>

@@ -4,6 +4,7 @@
             <h1 class="text-center" style="line-height: 65%">IAQ</h1>
             <h1 class="text-center">TAU</h1>
             <h6 class="logoname text-center mb-4">Integrated Articulator for the Questionable Text Airing Underworld</h6>
+            <h6 class="logoname text-center mb-4">by Rene Jotham Culaway</h6>
         </b-col>
     </b-row>
 </template>
@@ -17,7 +18,7 @@ export default {
 <style scoped lang='scss'>
 
     $e-Matrix-3-rgba: rgba(191,223,33, 0.5);
-
+    // Glowing animation for the acronym
     h1 {
         font-family: 'Audiowide', cursive;
         font-size: 5em;

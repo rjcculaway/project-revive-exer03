@@ -1,5 +1,6 @@
 <template>
     <b-row align-v="center">
+        <!-- This is where the user inputs the message. -->
         <b-col>
             <b-form-textarea id="msg_input" class="textarea-auto-height" rows="2" no-resize> </b-form-textarea>
         </b-col>
@@ -20,6 +21,7 @@ export default {
         name: String
     },
     methods: {
+        // Fetches the message from textarea, then pushes it onto the database.
         send_message: function () {
             var message_input = document.getElementById("msg_input").value
             console.log('NAME: ' + this.name)

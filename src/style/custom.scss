@@ -65,6 +65,7 @@ $input-color: white;
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css');
 
+// Global font change
 body {
     font-family: 'VT323', monospace;
     background-color: black;
@@ -73,6 +74,7 @@ body {
     scrollbar-color: black;
 }
 
+// Chat Bubbles
 .bubble {
     background-color: $e-Matrix-3-rgba;
     border-radius: 3px;
@@ -119,11 +121,13 @@ body {
     }
 }
 
+// Changes scrollbar look.
 html {
     scrollbar-color: $e-Matrix-3-rgba black;
     scrollbar-width: thin;
 }
 
+// Adds a CRT TV look.
 html::before {
     content: " ";
     display: block;
