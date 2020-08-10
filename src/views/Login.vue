@@ -26,7 +26,7 @@
               <b-form-text id="name-guide">Your display name can only contain alphanumeric characters, hyphens, underscores, and must be 4 to 20 characters.</b-form-text>
             </b-form-group>
 
-            <b-button type="submit" v-if="validation">Submit</b-button>
+            <b-button type="submit" :disabled="!validation">Submit</b-button>
           </b-form>
           
         </div>

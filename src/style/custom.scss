@@ -1,3 +1,6 @@
+// Font Sizing
+$font-size-base: 1.5rem;
+
 // Colors
 /* Color Theme Swatches in Hex */
 $e-Matrix-1-hex: #0C2670;
@@ -29,6 +32,21 @@ $danger:        red;
 $primary:       $e-Matrix-3-rgba;
 $secondary:       $e-Matrix-3-rgba;
 
+// Nav
+$navbar-dark-color:                 rgba($e-Matrix-3-rgba, .5) !default;
+$navbar-dark-hover-color:           rgba($e-Matrix-3-rgba, .75) !default;
+$navbar-dark-active-color:          $e-Matrix-3-rgba !default;
+$navbar-dark-disabled-color:        rgba($e-Matrix-3-rgba, .25) !default;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-dark-toggler-border-color:  rgba($e-Matrix-3-rgba, .1) !default;
+
+$navbar-light-color:                rgba($e-Matrix-3-rgba, .5) !default;
+$navbar-light-hover-color:          rgba($e-Matrix-3-rgba, .7) !default;
+$navbar-light-active-color:         rgba($e-Matrix-3-rgba, .9) !default;
+$navbar-light-disabled-color:       rgba($e-Matrix-3-rgba, .3) !default;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-toggler-border-color: rgba($e-Matrix-3-rgba, .1) !default;
+
 // Body
 $body-bg: $e-Matrix-3-rgba;
 $body-color: $e-Matrix-3-rgba;
@@ -43,24 +61,162 @@ $input-color: white;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
-@import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css');
 
 body {
-    font-family: 'Coda', cursive;
+    font-family: 'VT323', monospace;
     background-color: black;
     text-shadow: 0 0 5px rgba(191,223,33, 0.75);
+
+    scrollbar-color: black;
 }
 
 .bubble {
     background-color: $e-Matrix-3-rgba;
     border-radius: 3px;
     color: black;
+    max-width: 50vh;
     box-shadow: 0 0 5px rgba(191,223,33, 0.75);
 }
 
 .name {
-    font-family: 'Audiowide', cursive;
     line-height: 0;
 }
+
+.logoname {
+    font-family: 'Audiowide', cursive;
+    font-size: 0.5em;
+    font-weight: 800;
+
+    text-shadow: 0 0 25px $e-Matrix-3-rgba;
+
+    animation: 1.5s infinite glowing;
+}
+
+.logonav {
+    font-family: 'Audiowide', cursive;
+    font-size: 2em;
+    font-weight: 800;
+
+    text-shadow: 0 0 25px $e-Matrix-3-rgba;
+
+    animation: 1.5s infinite glowing;
+}
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 15px $e-Matrix-3-rgba;
+    }
+
+    50% {
+        text-shadow: 0 0 30px $e-Matrix-3-rgba;
+    }
+
+    100% {
+        text-shadow: 0 0 15px $e-Matrix-3-rgba;
+    }
+}
+
+html {
+    scrollbar-color: $e-Matrix-3-rgba black;
+    scrollbar-width: thin;
+}
+
+html::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  @keyframes flicker {
+    0% {
+    opacity: 0.27861;
+    }
+    5% {
+    opacity: 0.34769;
+    }
+    10% {
+    opacity: 0.23604;
+    }
+    15% {
+    opacity: 0.90626;
+    }
+    20% {
+    opacity: 0.18128;
+    }
+    25% {
+    opacity: 0.83891;
+    }
+    30% {
+    opacity: 0.65583;
+    }
+    35% {
+    opacity: 0.67807;
+    }
+    40% {
+    opacity: 0.26559;
+    }
+    45% {
+    opacity: 0.84693;
+    }
+    50% {
+    opacity: 0.96019;
+    }
+    55% {
+    opacity: 0.08594;
+    }
+    60% {
+    opacity: 0.20313;
+    }
+    65% {
+    opacity: 0.71988;
+    }
+    70% {
+    opacity: 0.53455;
+    }
+    75% {
+    opacity: 0.37288;
+    }
+    80% {
+    opacity: 0.71428;
+    }
+    85% {
+    opacity: 0.70419;
+    }
+    90% {
+    opacity: 0.7003;
+    }
+    95% {
+    opacity: 0.36108;
+    }
+    100% {
+    opacity: 0.24387;
+    }
+  }
+  
+  html::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
+  
+  

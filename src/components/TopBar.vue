@@ -1,20 +1,21 @@
 <template>
     <b-row>
         <b-col>
-            <div class="mt-5">
-                <Logo />
-            </div>
+            <b-navbar>
+                <b-navbar-brand class="logonav">IAQ TAU</b-navbar-brand>
+                <b-navbar-nav class="ml-auto">
+                    <b-button v-on:click="$emit('log-out')" type="submit">Log Out</b-button>
+                </b-navbar-nav>
+            </b-navbar>
         </b-col>
     </b-row>
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
 
 export default {
     name: 'TopBar',
     components: {
-        Logo
     }
 }
 </script>
