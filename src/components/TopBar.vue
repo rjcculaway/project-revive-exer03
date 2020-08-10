@@ -1,17 +1,23 @@
 <template>
     <b-row>
+        <!-- This one simply contains the logo and the log out button. -->
         <b-col>
-            Integrated Articulatingly Questionable Text Airing Underlayer (IAQ TAU)
-        </b-col>
-        <b-col cols="2">
-            <b-button v-on:click="$emit('log-out')" type="submit">Log Out</b-button>
+            <b-navbar>
+                <b-navbar-brand class="logonav">IAQ TAU</b-navbar-brand>
+                <b-navbar-nav class="ml-auto">
+                    <b-button v-on:click="$emit('log-out')" type="submit">Log Out</b-button>
+                </b-navbar-nav>
+            </b-navbar>
         </b-col>
     </b-row>
 </template>
 
 <script>
+
 export default {
-    name: 'TopBar'
+    name: 'TopBar',
+    components: {
+    }
 }
 </script>
 

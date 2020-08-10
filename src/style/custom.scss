@@ -1,0 +1,226 @@
+// Font Sizing
+$font-size-base: 1.5rem;
+
+// Colors
+/* Color Theme Swatches in Hex */
+$e-Matrix-1-hex: #0C2670;
+$e-Matrix-2-hex: #0C2C75;
+$e-Matrix-3-hex: #C0DF21;
+$e-Matrix-4-hex: #E7F3A1;
+$e-Matrix-5-hex: #000000;
+
+/* Color Theme Swatches in RGBA */
+$e-Matrix-1-rgba: rgba(11,38,112, 1);
+$e-Matrix-2-rgba: rgba(11,43,117, 1);
+$e-Matrix-3-rgba: rgba(191,223,33, 1);
+$e-Matrix-4-rgba: rgba(230,242,161, 1);
+$e-Matrix-5-rgba: rgba(0,0,0, 1);
+
+/* Color Theme Swatches in HSLA */
+$e-Matrix-1-hsla: hsla(224, 80, 24, 1);
+$e-Matrix-2-hsla: hsla(221, 81, 25, 1);
+$e-Matrix-3-hsla: hsla(69, 74, 50, 1);
+$e-Matrix-4-hsla: hsla(68, 77, 79, 1);
+$e-Matrix-5-hsla: hsla(0, 0, 0, 1);
+
+$primary:       $e-Matrix-3-rgba;
+$secondary:     $e-Matrix-1-rgba;
+$success:       $e-Matrix-3-rgba;
+$danger:        red;
+
+// Variable modifications
+$primary:       $e-Matrix-3-rgba;
+$secondary:       $e-Matrix-3-rgba;
+
+// Nav
+$navbar-dark-color:                 rgba($e-Matrix-3-rgba, .5) !default;
+$navbar-dark-hover-color:           rgba($e-Matrix-3-rgba, .75) !default;
+$navbar-dark-active-color:          $e-Matrix-3-rgba !default;
+$navbar-dark-disabled-color:        rgba($e-Matrix-3-rgba, .25) !default;
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-dark-toggler-border-color:  rgba($e-Matrix-3-rgba, .1) !default;
+
+$navbar-light-color:                rgba($e-Matrix-3-rgba, .5) !default;
+$navbar-light-hover-color:          rgba($e-Matrix-3-rgba, .7) !default;
+$navbar-light-active-color:         rgba($e-Matrix-3-rgba, .9) !default;
+$navbar-light-disabled-color:       rgba($e-Matrix-3-rgba, .3) !default;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-toggler-border-color: rgba($e-Matrix-3-rgba, .1) !default;
+
+// Body
+$body-bg: $e-Matrix-3-rgba;
+$body-color: $e-Matrix-3-rgba;
+
+// Cards
+$card-border-color:                 $e-Matrix-3-rgba;
+$card-bg: transparent;
+
+// Inputs
+$input-bg:                              transparent;
+$input-color: white;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css');
+
+// Global font change
+body {
+    font-family: 'VT323', monospace;
+    background-color: black;
+    text-shadow: 0 0 5px rgba(191,223,33, 0.75);
+
+    scrollbar-color: black;
+}
+
+// Chat Bubbles
+.bubble {
+    background-color: $e-Matrix-3-rgba;
+    border-radius: 3px;
+    color: black;
+    max-width: 50vh;
+    box-shadow: 0 0 5px rgba(191,223,33, 0.75);
+}
+
+.name {
+    line-height: 0;
+}
+
+.logoname {
+    font-family: 'Audiowide', cursive;
+    font-size: 0.5em;
+    font-weight: 800;
+
+    text-shadow: 0 0 25px $e-Matrix-3-rgba;
+
+    animation: 1.5s infinite glowing;
+}
+
+.logonav {
+    font-family: 'Audiowide', cursive;
+    font-size: 2em;
+    font-weight: 800;
+
+    text-shadow: 0 0 25px $e-Matrix-3-rgba;
+
+    animation: 1.5s infinite glowing;
+}
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 15px $e-Matrix-3-rgba;
+    }
+
+    50% {
+        text-shadow: 0 0 30px $e-Matrix-3-rgba;
+    }
+
+    100% {
+        text-shadow: 0 0 15px $e-Matrix-3-rgba;
+    }
+}
+
+// Changes scrollbar look.
+html {
+    scrollbar-color: $e-Matrix-3-rgba black;
+    scrollbar-width: thin;
+}
+
+// Adds a CRT TV look.
+html::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  @keyframes flicker {
+    0% {
+    opacity: 0.27861;
+    }
+    5% {
+    opacity: 0.34769;
+    }
+    10% {
+    opacity: 0.23604;
+    }
+    15% {
+    opacity: 0.90626;
+    }
+    20% {
+    opacity: 0.18128;
+    }
+    25% {
+    opacity: 0.83891;
+    }
+    30% {
+    opacity: 0.65583;
+    }
+    35% {
+    opacity: 0.67807;
+    }
+    40% {
+    opacity: 0.26559;
+    }
+    45% {
+    opacity: 0.84693;
+    }
+    50% {
+    opacity: 0.96019;
+    }
+    55% {
+    opacity: 0.08594;
+    }
+    60% {
+    opacity: 0.20313;
+    }
+    65% {
+    opacity: 0.71988;
+    }
+    70% {
+    opacity: 0.53455;
+    }
+    75% {
+    opacity: 0.37288;
+    }
+    80% {
+    opacity: 0.71428;
+    }
+    85% {
+    opacity: 0.70419;
+    }
+    90% {
+    opacity: 0.7003;
+    }
+    95% {
+    opacity: 0.36108;
+    }
+    100% {
+    opacity: 0.24387;
+    }
+  }
+  
+  html::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
+  
+  
